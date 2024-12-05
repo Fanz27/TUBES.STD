@@ -22,7 +22,6 @@ adr_Kategori createNewKategori(infoK data){
 }
 
 void insertKategoriLast(List_MLL &L, adr_Kategori P){
-    createList(L);
     if (first(L) == NULL) {
         first(L) = P;
     } else {
@@ -35,14 +34,21 @@ void insertKategoriLast(List_MLL &L, adr_Kategori P){
 
 }
 void deleteKategoriLast(List_MLL &L, adr_Kategori &P, adr_Kategori prec){
-    insertKategoriLast(L, P);
-    if (insertKategoriLast(L, P) == NULL) {
+    if (first(L) == NULL) {
         cout << "Data kosong tidak bisa dihapus" << endl;
+        P = NULL;
+    } else if {
+       P = first(L);
+       first(L) = NULL;
     } else {
-        prec = infoKategori;
-        P = next(prec);
-        next(prec) = next(P);
-        next(P) = NULL;
+        adr_Kategori temp = first(L);
+        adr_Kategori prec = NULL;
+        while (next(temp)!= NULL) {
+            prec = temp;
+            temp = next(temp);
+        }
+        P = temp;
+        next(prec) = NULL;
     }
 }
 void printKategori(List_MLL &L){
