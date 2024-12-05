@@ -85,3 +85,21 @@ void addDivisiToKategori(adr_Kategori &K, adr_Divisi P){
 void removeDivisiFromKategori(adr_Kategori &K, adr_Divisi &P){
 
 }
+
+void showAll(List_MLL &L){
+    adr_Kategori P = first(L);
+    while (P != NULL){
+        cout << "kategori  : " << infoKategori(P).namaK << endl;
+        cout << "Deskripsi : " << infoKategori(P).desK << endl;
+        cout << "kategori  : " << infoKategori(P).jenis << endl;
+        adr_Divisi = nextDiv(P);
+        while (Q != NULL){
+                cout << "Divisi     : " << infoDivisi(P).namaD << endl;
+                cout << "Durasi     : " << infoDivisi(P).durasi << endl;
+                cout << "Harga      : " << infoDivisi(P).harga << endl;
+                cout << "Instruktur : " << infoDivisi(P).instruktur << endl;
+                Q = nextDiv(Q);
+        }
+        P = nextKategori(P);
+    }
+}

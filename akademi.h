@@ -18,7 +18,7 @@ using namespace std;
 struct kategori {
     string namaK;
     string desK;
-    bool jenis;
+    bool jenis; 
 };
 
 typedef struct elemenKategori *adr_Kategori;
@@ -28,7 +28,7 @@ struct elemenKategori{
     infoK infoKategori;
     adr_Kategori nextKategori;
     adr_Kategori prevKategori;
-    adr_Divisi first;
+    adr_Divisi nextDiv;
 };
 
 
