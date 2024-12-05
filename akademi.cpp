@@ -46,14 +46,19 @@ void deleteKategoriLast(List_MLL &L, adr_Kategori &P, adr_Kategori prec){
     }
 }
 void printKategori(List_MLL &L){
-
+    
 }
 
 adr_Divisi createNewDivisi(infoD data){
+    adr_Divisi Q = new elemenDivisi;
+    info(Q) = data;
+    first(Q) = NULL;
+    next(Q) = NULL;
 
+    return Q;
 }
 void insertDivisiLast(listDivisi &L, adr_Divisi P){
-
+    
 }
 void deleteDivisiFirst(listDivisi &L, adr_Divisi &P){
 

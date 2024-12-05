@@ -8,6 +8,7 @@
 #define nextDiv(P) (P)->nextDiv
 #define next(temp) (temp)->next
 #define infoDivisi(P) (P)->infoDivisi
+#define info(Q) (Q)->info
 #define first(L) (L).first
 #define last(L) (L).last
 
