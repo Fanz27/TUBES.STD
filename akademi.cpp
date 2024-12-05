@@ -24,12 +24,16 @@ adr_Kategori createNewKategori(infoK data){
 void insertKategoriLast(List_MLL &L, adr_Kategori P){
     if (first(L) == NULL) {
         first(L) = P;
+        last(L) = P;
+        next(P) = NULL;
+        prev(P) = NULL;
     } else {
-        adr_Kategori temp = first(L);
-        while (next(temp) != NULL) {
-            temp = next(temp);
-        }
+        adr_Kategori temp = last(L);
         next(temp) = P;
+        prev(P) = temp;
+        prev(P) = temp;
+        next(P) = NULL;
+        last(L) = P;
     }
 
 }
