@@ -25,14 +25,13 @@ void insertKategoriLast(List_MLL &L, adr_Kategori P){
     if (first(L) == NULL) {
         first(L) = P;
         last(L) = P;
-        next(P) = NULL;
+        nextKategori(P) = NULL;
         prev(P) = NULL;
     } else {
         adr_Kategori temp = last(L);
-        next(temp) = P;
-        prev(P) = temp;
-        prev(P) = temp;
-        next(P) = NULL;
+        nextKategori(temp) = P;
+        prevKategori(P) = temp;
+        nextKategori(P) = NULL;
         last(L) = P;
     }
 
