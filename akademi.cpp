@@ -92,8 +92,20 @@ void deleteDivisiFirst(listDivisi &L, adr_Divisi P){
 void deleteDivisiLast(listDivisi &L, adr_Divisi &P){
 
 }
-void printDivisi(listDivisi &L){
-
+void printDivisi(List_MLL &L){
+    adr_Kategori P = L.first;
+    while (P != nullptr) {
+        adr_Divisi Q = P->nextDiv;
+        cout << "  Divisi for Kategori: " << infoKategori(P).namaK << endl;
+        while (Q != nullptr) {
+            cout << "    Divisi: " << infoDivisi(Q).namaD << endl;
+            cout << "    Durasi: " << infoDivisi(Q).durasi << endl;
+            cout << "    Harga: " << infoDivisi(Q).harga << endl;
+            cout << "    Instruktur: " << infoDivisi(Q).instruktur << endl;
+            Q = nextDiv(Q);
+        }
+        P = nextKategori(P);
+    }
 }
 
 void addDivisiToKategori(adr_Kategori &K, adr_Divisi P){
