@@ -1,7 +1,8 @@
-#include "akademi.h"
 #include <iostream>
 
 using namespace std;
 
-cin >> Nama;
-cout << "Nama kamu:" << Nama << endl;
+int main(){
+    cout << "TEST" << endl;
+    return 0;
+}
