@@ -41,9 +41,10 @@ void deleteKategoriLast(List_MLL &L, adr_Kategori &P, adr_Kategori prec){
     if (first(L) == NULL) {
         cout << "Data kosong tidak bisa dihapus" << endl;
         P = NULL;
-    } else if {
+    } else if (first(L) == last(L)) {
        P = first(L);
        first(L) = NULL;
+       last(L) = NULL;
     } else {
         adr_Kategori temp = first(L);
         adr_Kategori prec = NULL;
@@ -56,7 +57,12 @@ void deleteKategoriLast(List_MLL &L, adr_Kategori &P, adr_Kategori prec){
     }
 }
 void printKategori(List_MLL &L){
-    
+    adr_Kategori P = first(L);
+    while (P != NULL) {
+        cout << infoKategori(P) << " ";
+        P = nextKategori(P);
+    }
+    cout << endl;
 }
 
 adr_Divisi createNewDivisi(infoD data){
