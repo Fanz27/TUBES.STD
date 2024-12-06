@@ -1,4 +1,5 @@
 #include <iostream>
+#include "akademi.h"
 
 using namespace std;
 
