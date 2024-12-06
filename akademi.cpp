@@ -26,7 +26,7 @@ void insertKategoriLast(List_MLL &L, adr_Kategori P){
         first(L) = P;
         last(L) = P;
         nextKategori(P) = NULL;
-        prev(P) = NULL;
+        prevKategori(P) = NULL;
     } else {
         adr_Kategori temp = last(L);
         nextKategori(temp) = P;
@@ -41,9 +41,9 @@ void deleteKategoriLast(List_MLL &L, adr_Kategori &P, adr_Kategori prec){
         cout << "Data kosong tidak bisa dihapus" << endl;
         P = NULL;
     } else if (first(L) == last(L)) {
-       P = first(L);
-       first(L) = NULL;
-       last(L) = NULL;
+        P = first(L);
+        first(L) = NULL;
+        last(L) = NULL;
     } else {
         adr_Kategori temp = first(L);
         adr_Kategori prec = NULL;
@@ -58,7 +58,9 @@ void deleteKategoriLast(List_MLL &L, adr_Kategori &P, adr_Kategori prec){
 void printKategori(List_MLL &L){
     adr_Kategori P = first(L);
     while (P != NULL) {
-        cout << infoKategori(P) << " ";
+        cout << infoKategori(P).namaK << " ";
+        cout << infoKategori(P).desK << " ";
+        cout << infoKategori(P).jenis << " ";
         P = nextKategori(P);
     }
     cout << endl;
@@ -66,17 +68,26 @@ void printKategori(List_MLL &L){
 
 adr_Divisi createNewDivisi(infoD data){
     adr_Divisi Q = new elemenDivisi;
-    info(Q) = data;
-    first(Q) = NULL;
-    next(Q) = NULL;
+    infoDivisi(Q) = data;
+    nextDiv(Q) = NULL;
 
     return Q;
 }
-void insertDivisiLast(listDivisi &L, adr_Divisi P){
-    
-}
-void deleteDivisiFirst(listDivisi &L, adr_Divisi &P){
+void insertDivisiLast(List_MLL &L, adr_Divisi P){
+    adr_Kategori K = last(L);
+    if (nextDiv(K) == NULL){
+        nextDiv(K) = P;
+    } else {
+        adr_Divisi Q = nextDiv(K);
+        while (nextDiv(Q) != NULL) {
+            Q = nextDiv(Q);
+        }
+        nextDiv(Q) = P;
+    }
 
+}
+void deleteDivisiFirst(listDivisi &L, adr_Divisi P){
+    
 }
 void deleteDivisiLast(listDivisi &L, adr_Divisi &P){
 
