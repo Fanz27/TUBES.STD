@@ -14,8 +14,8 @@ void createListDivisi(List_MLL &L){
 
 adr_Kategori createNewKategori(infoK data){
     adr_Kategori P = new elemenKategori;
-    info(P) = data;
-    next(P) = NULL;
+    infoKategori(P) = data;
+    nextKategori(P) = NULL;
     last(P) = NULL;
 
     return P;
@@ -47,12 +47,12 @@ void deleteKategoriLast(List_MLL &L, adr_Kategori &P, adr_Kategori prec){
     } else {
         adr_Kategori temp = first(L);
         adr_Kategori prec = NULL;
-        while (next(temp)!= NULL) {
+        while (nextKategori(temp)!= NULL) {
             prec = temp;
-            temp = next(temp);
+            temp = nextKategori(temp);
         }
         P = temp;
-        next(prec) = NULL;
+        nextKategori(prec) = NULL;
     }
 }
 void printKategori(List_MLL &L){
