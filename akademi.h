@@ -21,6 +21,7 @@ struct kategori {
     bool jenis; 
 };
 
+typedef struct elemenDivisi *adr_Divisi;
 typedef struct elemenKategori *adr_Kategori;
 typedef kategori infoK;
 
@@ -39,7 +40,6 @@ struct divisi{
     string harga;
     string instruktur;
 };
-typedef struct elemenDivisi *adr_Divisi;
 typedef divisi infoD;
 
 struct elemenDivisi{
