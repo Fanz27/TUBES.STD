@@ -3,11 +3,6 @@
 
 using namespace std;
 
-#include <iostream>
-#include "akademi.h"
-
-using namespace std;
-
 void showMainMenu() {
     cout << "==== Main Menu ====" << endl;
     cout << "1. Create new Kategori" << endl;
