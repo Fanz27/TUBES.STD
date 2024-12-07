@@ -14,6 +14,20 @@
 
 using namespace std;
 
+//Divisi
+struct divisi{
+    string namaD;
+    string durasi;
+    string harga;
+    string instruktur;
+};
+typedef divisi infoD;
+
+struct elemenDivisi{
+    infoD infoDivisi;
+    adr_Divisi nextDiv;
+};
+
 //Kategori
 struct kategori {
     string namaK;
@@ -34,19 +48,6 @@ struct elemenKategori{
 };
 
 
-//Divisi
-struct divisi{
-    string namaD;
-    string durasi;
-    string harga;
-    string instruktur;
-};
-typedef divisi infoD;
-
-struct elemenDivisi{
-    infoD infoDivisi;
-    adr_Divisi nextDiv;
-};
 
 
 
