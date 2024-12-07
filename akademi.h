@@ -47,10 +47,6 @@ struct elemenKategori{
     adr_Divisi nextDiv;
 };
 
-
-
-
-
 struct List_MLL{
     adr_Kategori first;
     adr_Kategori last;
