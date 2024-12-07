@@ -19,6 +19,7 @@ struct kategori {
     string namaK;
     string desK;
     bool jenis; 
+    struct Divisi;
 };
 
 typedef struct elemenDivisi *adr_Divisi;
