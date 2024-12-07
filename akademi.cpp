@@ -86,11 +86,32 @@ void insertDivisiLast(List_MLL &L, adr_Divisi P){
     }
 
 }
-void deleteDivisiFirst(listDivisi &L, adr_Divisi P){
-    
-}
-void deleteDivisiLast(listDivisi &L, adr_Divisi &P){
+void deleteDivisiFirst(listDivisi &L, adr_Divisi P) {
+    P = first(L);
+    first(L) = nextDiv(P);
+    nextDiv(P) = NULL;
 
+    return P;
+}
+void deleteDivisiLast(List_MLL &L, adr_Divisi &P) {
+    if (first(L) == NULL) {
+        cout << "Data kosong tidak bisa dihapus" << endl;
+        P = NULL;
+    } else if (first(L) == last(L)) {
+        P = first(L);
+        first(L) = NULL;
+        last(L) = NULL;
+    } else {
+        adr_Divisi Q = first(L);
+        adr_Divisi prec = NULL;
+        while (nextDiv(Q)!= NULL) {
+            prec = temp;
+            Q = nextDiv(Q);
+        }
+        P = Q;
+        nextDiv(prec) = NULL;
+        last(L) = NULL;
+    }
 }
 void printDivisi(List_MLL &L){
     adr_Kategori P = first(L);
@@ -109,10 +130,10 @@ void printDivisi(List_MLL &L){
 }
 
 void addDivisiToKategori(adr_Kategori &K, adr_Divisi P){
-    
+
 }
 void removeDivisiFromKategori(adr_Kategori &K, adr_Divisi &P){
-
+    
 }
 
 void showAll(List_MLL &L){

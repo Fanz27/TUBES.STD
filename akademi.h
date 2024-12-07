@@ -67,6 +67,7 @@ adr_Divisi createNewDivisi(infoD data);
 void insertDivisiLast(List_MLL &L, adr_Divisi P);
 void deleteDivisiFirst(List_MLL &L, adr_Divisi &P);
 void deleteDivisiLast(List_MLL &L, adr_Divisi &P);
+adr_Divisi searchDivisi(adr_Divisi X, string namaDiv, string durasi, string harga, string instruktur); 
 void printDivisi(List_MLL &L);
 
 // Add and Remove Divisi to/from Kategori
