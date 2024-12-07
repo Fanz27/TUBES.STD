@@ -18,5 +18,4 @@ void showMainMenu() {
 }
 
 int main() {
-    cout << "Nama Kamu: " << endl;
-}
+    showMainMenu();
