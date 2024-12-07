@@ -23,10 +23,6 @@ struct divisi{
 };
 typedef divisi infoD;
 
-struct elemenDivisi{
-    infoD infoDivisi;
-    adr_Divisi nextDiv;
-};
 
 //Kategori
 struct kategori {
@@ -44,6 +40,11 @@ struct elemenKategori{
     infoK infoKategori;
     adr_Kategori nextKategori;
     adr_Kategori prevKategori;
+    adr_Divisi nextDiv;
+};
+
+struct elemenDivisi{
+    infoD infoDivisi;
     adr_Divisi nextDiv;
 };
 
