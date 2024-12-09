@@ -130,10 +130,38 @@ void printDivisi(List_MLL &L){
 }
 
 void addDivisiToKategori(adr_Kategori &K, adr_Divisi P){
-
+    if (K != NULL) {
+        if (nextDiv(K) == NULL) {
+            nextDiv(K) = P;
+        } else {
+            adr_Divisi currentDiv = nextDiv(K);
+            while (nextDiv(currentDiv) != NULL) {
+                currentDiv = nextDiv(currentDiv);
+            }
+            nextDiv(currentDiv) = P;
+        }
+    }
 }
 void removeDivisiFromKategori(adr_Kategori &K, adr_Divisi &P){
-        
+    if (K != nullptr && P != NULL) {
+        adr_Divisi currentDiv = nextDiv(K);
+        adr_Divisi prevDiv = NULL;
+
+        while (currentDiv != NULL) {
+            if (currentDiv == P) {
+                if (prevDiv != NULL) {
+                    nextDiv(prevDiv) = nextDiv(currentDiv);
+                } else {
+                    nextDiv(K) = nextDiv(currentDiv);
+                }
+                nextDiv(currentDiv) = NULL;
+                delete currentDiv;
+                return;
+            }
+            prevDiv = currentDiv;
+            currentDiv = nextDiv(currentDiv);
+        }
+    }
 }
 
 void showAll(List_MLL &L){
