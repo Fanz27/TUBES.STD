@@ -104,6 +104,7 @@ void deleteDivisiLast(List_MLL &L, adr_Divisi &P) {
     } else {
         adr_Divisi Q = first(L);
         adr_Divisi prec = NULL;
+        adr_Divisi temp;
         while (nextDiv(Q)!= NULL) {
             prec = temp;
             Q = nextDiv(Q);
@@ -161,10 +162,10 @@ void removeDivisiFromKategori(adr_Kategori &K, adr_Divisi &P){
                 cout << "Divisi Tidak Ditemukan" << endl;
                 P = NULL;
             } else {
-                nextDiv(prev(Q)) = nextDiv(Q) {
+                //prev->nextDiv(Q) = nextDiv(Q) {
                     nextDiv(Q) = NULL;
                     P = Q;
-                }
+                //}
             }
 
         }
@@ -178,7 +179,7 @@ void showAll(List_MLL &L){
         cout << "kategori  : " << infoKategori(P).namaK << endl;
         cout << "Deskripsi : " << infoKategori(P).desK << endl;
         cout << "kategori  : " << infoKategori(P).jenis << endl;
-        adr_Divisi = nextDiv(P);
+        adr_Divisi Q = nextDiv(P);
         while (Q != NULL){
                 cout << "Divisi     : " << infoDivisi(P).namaD << endl;
                 cout << "Durasi     : " << infoDivisi(P).durasi << endl;
