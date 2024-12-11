@@ -21,8 +21,8 @@ struct divisi{
     string harga;
     string instruktur;
 };
-typedef divisi infoD;
 
+typedef divisi infoD;
 
 //Kategori
 struct kategori {
@@ -53,7 +53,6 @@ struct List_MLL{
     adr_Kategori last;
 };
 
-
 void createList(List_MLL &L);
 
 // untuk elemen kategori
@@ -76,7 +75,7 @@ void addDivisiToKategori(adr_Kategori &K, adr_Divisi P);
 void removeDivisiFromKategori(adr_Kategori &K, adr_Divisi &P);
 
 //menampilkan seluruh data kategori bersama divisinya
-void showAll(List_MLL &L);
+void showAll(List_MLL L);
 
 void listMenu();
 

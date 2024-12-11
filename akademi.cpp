@@ -173,7 +173,7 @@ void removeDivisiFromKategori(adr_Kategori &K, adr_Divisi &P){
 
 }
 
-void showAll(List_MLL &L){
+void showAll(List_MLL L){
     adr_Kategori P = first(L);
     while (P != NULL){
         cout << "kategori  : " << infoKategori(P).namaK << endl;
@@ -181,10 +181,10 @@ void showAll(List_MLL &L){
         cout << "kategori  : " << infoKategori(P).jenis << endl;
         adr_Divisi Q = nextDiv(P);
         while (Q != NULL){
-                cout << "Divisi     : " << infoDivisi(P).namaD << endl;
-                cout << "Durasi     : " << infoDivisi(P).durasi << endl;
-                cout << "Harga      : " << infoDivisi(P).harga << endl;
-                cout << "Instruktur : " << infoDivisi(P).instruktur << endl;
+                cout << "Divisi     : " << infoDivisi(Q).durasi << endl;
+                // cout << "Durasi     : " << infoDivisi(P).durasi << endl;
+                // cout << "Harga      : " << infoDivisi(P).harga << endl;
+                // cout << "Instruktur : " << infoDivisi(P).instruktur << endl;
                 Q = nextDiv(Q);
         }
         P = nextKategori(P);
