@@ -130,10 +130,46 @@ void printDivisi(List_MLL &L){
 }
 
 void addDivisiToKategori(adr_Kategori &K, adr_Divisi P){
+    if (nextDiv(K) == NULL){
+        nextDiv(K) = P;
+    } else {
+        adr_Divisi Q = nextDiv(K);
+        while (nextDiv(K) != NULL) {
+            Q = nextDiv(Q);
+        }
+        nextDiv(Q) = P;
+    }
 
 }
 void removeDivisiFromKategori(adr_Kategori &K, adr_Divisi &P){
-        
+    if (nextDiv(K) == NULL) {
+        cout << "Data Kosong Tidak Dapat Dihapus" << endl;
+        P = NULL;
+    } else {
+        adr_Divisi Q = nextDiv(K);
+        if (Q == P) {
+            nextDiv(K) = nextDiv(Q);
+            nextDiv(Q) = NULL;
+            P = Q;
+        } else {
+            adr_Divisi prev = NULL;
+            while (Q != NULL && Q != P) {
+                prev = Q;
+                Q = nextDiv(Q);
+            }
+            if (Q == NULL) {
+                cout << "Divisi Tidak Ditemukan" << endl;
+                P = NULL;
+            } else {
+                nextDiv(prev(Q)) = nextDiv(Q) {
+                    nextDiv(Q) = NULL;
+                    P = Q;
+                }
+            }
+
+        }
+    }
+
 }
 
 void showAll(List_MLL &L){
