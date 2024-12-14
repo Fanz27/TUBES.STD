@@ -1,6 +1,7 @@
 #ifndef AKADEMI_H_INCLUDED
 #define AKADEMI_H_INCLUDED
 #include <iostream>
+#include <string>
 
 #define infoKategori(P) (P)->infoKategori
 #define nextKategori(P) (P)->nextKategori
